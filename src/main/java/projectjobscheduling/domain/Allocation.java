@@ -131,11 +131,11 @@ public class Allocation extends AbstractPersistable {
 
         Integer startDate = predecessorsDoneDate + (delay == null ? 0 : delay);
 
-/*
-        if(startDate > 5 && startDate < 10){
-            startDate = 10;
-        }
-*/
+
+       /* if(startDate >= 3 && startDate <= 7){
+            startDate = 8;
+        }*/
+
 
         return startDate;
     }

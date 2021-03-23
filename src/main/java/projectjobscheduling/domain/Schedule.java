@@ -25,6 +25,7 @@ import org.optaplanner.core.api.domain.solution.PlanningSolution;
 import org.optaplanner.core.api.domain.solution.ProblemFactCollectionProperty;
 import org.optaplanner.core.api.score.buildin.bendable.BendableScore;
 import org.optaplanner.persistence.xstream.api.score.buildin.bendable.BendableScoreXStreamConverter;
+import projectjobscheduling.domain.equipment.EquipmentAvailable;
 import projectjobscheduling.domain.resource.Resource;
 
 import java.util.List;
@@ -38,6 +39,7 @@ public class Schedule extends AbstractPersistable {
     private List<ExecutionMode> executionModeList;
     private List<Resource> resourceList;
     private List<ResourceRequirement> resourceRequirementList;
+    private List<EquipmentAvailable> equipmentAvailableList;
 
     private List<Allocation> allocationList;
 
@@ -85,8 +87,17 @@ public class Schedule extends AbstractPersistable {
         return resourceRequirementList;
     }
 
+    @ProblemFactCollectionProperty
     public void setResourceRequirementList(List<ResourceRequirement> resourceRequirementList) {
         this.resourceRequirementList = resourceRequirementList;
+    }
+
+    public List<EquipmentAvailable> getEquipmentAvailableList() {
+        return equipmentAvailableList;
+    }
+
+    public void setEquipmentAvailableList(List<EquipmentAvailable> equipmentAvailableList) {
+        this.equipmentAvailableList = equipmentAvailableList;
     }
 
     @PlanningEntityCollectionProperty
